@@ -26,7 +26,7 @@
 </head>
 <body>
     <h1>FujiMuse Privacy Policy</h1>
-    <p class="updated"><strong>Last Updated:</strong> January 20, 2026</p>
+    <p class="updated"><strong>Last Updated:</strong> May 28, 2026</p>
 
     <h2>Introduction</h2>
     <p>FujiMuse ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
@@ -37,7 +37,8 @@
     <ul>
         <li><strong>Account Information</strong>: Email address, username, display name, profile picture, bio, and camera model when you create an account</li>
         <li><strong>User Content</strong>: Photos you upload, recipes you create, posts, comments, and captions</li>
-        <li><strong>Communications</strong>: Messages you send through our AI chat feature</li>
+        <li><strong>AI Chat Content</strong>: Messages you choose to send through our AI chat feature and the AI responses returned to you</li>
+        <li><strong>Purchase Tokens</strong>: Google Play purchase tokens used to verify paid feature access. We do not receive your payment card details.</li>
     </ul>
 
     <h3>Information Collected Automatically</h3>
@@ -45,8 +46,8 @@
         <li><strong>Usage Data</strong>: Features you use, actions you take, time and frequency of activities</li>
         <li><strong>Device Information</strong>: Device type, operating system, unique device identifiers</li>
         <li><strong>Log Data</strong>: IP address, browser type, pages visited, time spent</li>
-        <li><strong>Analytics Data</strong>: Firebase Analytics collects aggregated usage events such as screens viewed, recipes created, posts liked, and feature engagement. Analytics data is anonymized and used to improve the app experience.</li>
-        <li><strong>Crash Reports</strong>: Firebase Crashlytics collects crash logs, stack traces, device state at time of crash, and a hashed user identifier. Crash data does not include your personal content such as messages, photos, or recipe details. Crash reporting is disabled in debug builds and only active in production releases.</li>
+        <li><strong>Analytics Data</strong>: Firebase Analytics is disabled by default and collects aggregated usage events only after you grant consent in the app.</li>
+        <li><strong>Crash Reports</strong>: Firebase Crashlytics is disabled by default and collects crash logs only after you grant consent. Crash data does not include your personal content such as messages, photos, or recipe details.</li>
     </ul>
 
     <h3>Information from Third Parties</h3>
@@ -72,25 +73,26 @@
 
     <h3>AI Chat</h3>
     <ul>
-        <li>Messages you send to the AI assistant are processed by third-party AI services</li>
-        <li>When you use the AI chat, your text messages and your selected camera model are sent to third-party servers for processing</li>
+        <li>Messages you send to the AI assistant are routed through our Supabase Edge Function proxy to third-party AI services for processing</li>
+        <li>FujiMuse currently uses Google Gemini as the primary AI chat provider and may use Anthropic Claude as a fallback</li>
+        <li>When you use AI chat, your text messages and selected camera context may be sent to the AI provider through our server-side proxy</li>
         <li>Your photos are never sent to the AI chat service</li>
-        <li>Conversations may be stored locally to provide context within sessions and are cleared after 30 days of inactivity</li>
-        <li>We do not use your chat history to train AI models</li>
-        <li>AI-generated recipe suggestions and responses may not be accurate and should be verified before use</li>
+        <li>Chat history is stored locally on your device so the conversation can continue in the app. It is not persisted to our Supabase database.</li>
+        <li>Provider retention and training terms are governed by the providers' commercial API terms</li>
+        <li>AI-generated recipe suggestions are creative guidance, not guaranteed camera or vendor facts, and should be verified before use</li>
     </ul>
 
     <h3>Recipe Preview</h3>
     <ul>
-        <li>When you generate a visual preview, your uploaded photo is sent to a third-party AI API along with recipe parameters</li>
-        <li>Images are processed by third-party AI models for style transfer</li>
+        <li>When you generate an AI-enhanced visual preview, your uploaded photo is sent through our server-side proxy to Replicate along with recipe parameters</li>
+        <li>Images are processed by third-party AI models for style transfer. On-device LUT preview does not transmit photos.</li>
         <li>Generated previews are temporarily cached and may be stored in your post history</li>
     </ul>
 
     <h2>Data Sharing</h2>
     <p>We do not sell your personal information. We may share information:</p>
     <ul>
-        <li><strong>With Service Providers</strong>: Cloud hosting (Supabase), AI services, payment processing, analytics and crash reporting (Google Firebase Analytics, Firebase Crashlytics)</li>
+        <li><strong>With Service Providers</strong>: Cloud hosting and auth (Supabase), AI chat processing (Google Gemini primary, Anthropic Claude fallback), AI image preview processing (Replicate), payment processing (Google Play Billing), and optional analytics/crash reporting after consent (Firebase Analytics, Firebase Crashlytics)</li>
         <li><strong>With Other Users</strong>: Your username, display name, profile picture, bio, posts, photos, recipe data, and comments are publicly visible to other users as part of the social features. Your email address is never displayed to other users.</li>
         <li><strong>For Legal Reasons</strong>: When required by law or to protect rights and safety</li>
         <li><strong>Business Transfers</strong>: In connection with a merger, acquisition, or sale of assets</li>
@@ -100,8 +102,10 @@
     <ul>
         <li><strong>Account Data</strong>: Retained while your account is active</li>
         <li><strong>Posts and Content</strong>: Retained until you delete them or your account</li>
-        <li><strong>Chat History</strong>: Session-based, cleared after 30 days of inactivity</li>
-        <li><strong>Usage Logs</strong>: Retained for 90 days for security and analytics</li>
+        <li><strong>Chat History</strong>: Stored locally on your device until you clear it, delete the app data, or delete your account</li>
+        <li><strong>Telemetry</strong>: Retained for 14 months in Firebase only if you opt in</li>
+        <li><strong>Crash Reports</strong>: Retained for 90 days in Crashlytics only if you opt in</li>
+        <li><strong>Purchase Tokens</strong>: Retained for entitlement, tax, accounting, refund, and fraud-prevention needs</li>
     </ul>
 
     <h2>Your Rights</h2>
@@ -111,7 +115,7 @@
         <li><strong>Correction</strong>: Update inaccurate information</li>
         <li><strong>Deletion</strong>: Delete your account and associated data</li>
         <li><strong>Portability</strong>: Export your recipes in standard formats</li>
-        <li><strong>Opt-out</strong>: Disable analytics tracking in settings</li>
+        <li><strong>Opt-out</strong>: Disable analytics and crash reporting consent in settings</li>
     </ul>
     <p>To exercise these rights, contact us at <a href="mailto:privacy@fujimuse.app">privacy@fujimuse.app</a></p>
 
@@ -147,7 +151,7 @@
     <ul>
         <li>Right to know what personal information is collected</li>
         <li>Right to know if personal information is sold or disclosed</li>
-        <li>Right to opt-out of the sale of personal information</li>
+        <li>Right to opt out of the sale of personal information</li>
         <li>Right to non-discrimination for exercising privacy rights</li>
     </ul>
     <p>We do not sell personal information as defined by the CCPA.</p>
