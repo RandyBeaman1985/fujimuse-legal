@@ -93,7 +93,8 @@ test("contact and operator placeholders are the owner's until a company exists",
     assert.doesNotMatch(doc, /gmail\.com/);
     assert.doesNotMatch(doc, /FujiMuse Development/);
     assert.match(doc, /davey@cleverfoxailabs\.com/);
-    assert.match(doc, /Davey Randa/);
+    assert.match(doc, /David Randa/);
+    assert.doesNotMatch(doc, /Davey Randa/);
   }
 });
 
