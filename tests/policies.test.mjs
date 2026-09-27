@@ -87,3 +87,12 @@ test("short links used by the apps resolve", () => {
     assert.ok(existsSync(new URL(`../${file}`, import.meta.url)), `${file} missing`);
   }
 });
+
+test("contact and operator placeholders are the owner's until a company exists", () => {
+  for (const doc of [privacy, terms]) {
+    assert.doesNotMatch(doc, /gmail\.com/);
+    assert.doesNotMatch(doc, /FujiMuse Development/);
+    assert.match(doc, /davey@cleverfoxailabs\.com/);
+    assert.match(doc, /Davey Randa/);
+  }
+});
