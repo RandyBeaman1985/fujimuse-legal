@@ -96,3 +96,7 @@ test("contact and operator placeholders are the owner's until a company exists",
     assert.match(doc, /Davey Randa/);
   }
 });
+
+test("privacy: names the waitlist confirmation email provider", () => {
+  assert.match(privacy, /Resend/);
+});
