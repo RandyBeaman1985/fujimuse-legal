@@ -26,7 +26,7 @@ test("privacy: discloses email, Apple and Google sign-in", () => {
   assert.match(privacy, /Google/);
   assert.match(privacy, /private relay/i);
   assert.doesNotMatch(privacy, /do not use third-party sign-in/i);
-  assert.match(privacy, /Join with Google/i);
+  assert.match(privacy, /Continue with Google/i);
 });
 
 test("privacy: analytics are not tied to the FujiMuse account", () => {
