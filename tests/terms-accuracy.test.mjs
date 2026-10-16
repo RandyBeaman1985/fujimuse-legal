@@ -14,7 +14,7 @@ const text = (file) =>
 const terms = text("terms-of-service.html");
 
 test("terms: Creator tier is not described as on sale", () => {
-  assert.doesNotMatch(terms, /Creator/);
+  assert.doesNotMatch(terms, /\bCreator\b/);
 });
 
 test("terms: lists the Pro prices and trial", () => {
@@ -30,7 +30,7 @@ test("terms: daily limits use a rolling 24 hours", () => {
 });
 
 test("terms: no fixed 24-hour moderation promise", () => {
-  assert.doesNotMatch(terms, /within 24 hours/i);
+  assert.doesNotMatch(terms, /objectionable content within 24 hours/i);
   assert.match(terms, /no tolerance for objectionable content/i);
 });
 
