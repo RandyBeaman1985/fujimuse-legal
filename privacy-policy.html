@@ -27,7 +27,7 @@
 <body>
     <!-- PLACEHOLDER: contact email is the owner's CleverFox address until a fujimuse.app support mailbox exists, and the operator is the owner as an individual until a company is formed. Update both when that changes. -->
     <h1>FujiMuse Privacy Policy</h1>
-    <p class="updated"><strong>Last Updated:</strong> October 11, 2026</p>
+    <p class="updated"><strong>Last Updated:</strong> October 16, 2026</p>
 
     <h2>Introduction</h2>
     <p>FujiMuse ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the FujiMuse mobile apps, visit the FujiMuse website at <a href="https://fujimuse.app">fujimuse.app</a>, or join the beta waitlist.</p>
@@ -36,16 +36,16 @@
 
     <h3>Information You Provide</h3>
     <ul>
-        <li><strong>Account Information:</strong> Your email address and password when you create an account. FujiMuse accounts use email address and password sign-in only; we do not use third-party sign-in.</li>
+        <li><strong>Account Information:</strong> You can create an account with your email address and password, with Sign in with Apple, or with Google. If you use Apple or Google, the provider handles the sign-in under its own privacy policy and we never receive your Apple or Google password. We receive your email address (with Apple this may be a private relay address that forwards to you), an account identifier from the provider, and basic profile details the provider shares, such as your name, which we use to suggest a username.</li>
         <li><strong>Profile Information:</strong> Username, display name, profile picture, bio, website, and camera model, if you choose to add them</li>
         <li><strong>User Content:</strong> Photos you post, captions, an optional location you type on a post, comments, likes, follows, and recipes you share</li>
         <li><strong>Recipes and Collections:</strong> Recipes you save and collections you build. If you turn on cloud recipe backup and sync, these are stored on our servers so they can sync between your devices.</li>
         <li><strong>AI Chat Content:</strong> Messages you choose to send through the AI chat feature</li>
         <li><strong>Photos for AI Preview:</strong> A photo you choose when you request an AI-enhanced recipe preview</li>
         <li><strong>Reports:</strong> Content or users you report, and the reason you give</li>
-        <li><strong>Terms Acceptance:</strong> A record of when you accepted the Terms of Service and which version</li>
+        <li><strong>Terms Acceptance:</strong> A record of when you accepted the Terms of Service</li>
         <li><strong>Purchase Records:</strong> Google Play purchase tokens (and, for the iOS app, Apple App Store transaction identifiers) used to verify paid feature access. We do not receive your payment card details.</li>
-        <li><strong>Beta Waitlist:</strong> Email address, whether and when you confirmed it through the link we email you, consent date and version, language/locale, referring page, landing-page variant, and campaign attribution parameters when you join the beta waitlist on our website. The waitlist does not require a FujiMuse account.</li>
+        <li><strong>Beta Waitlist:</strong> Email address, whether and when you confirmed it through the link we email you, consent date and version, language/locale, referring page, landing-page variant, and campaign attribution parameters when you join the beta waitlist on our website. You can also join with Join with Google on the website; we then receive the email address on your Google account from Google, which confirms it, so no confirmation email is sent. The waitlist does not require a FujiMuse account.</li>
         <li><strong>Support Messages:</strong> Anything you send us by email</li>
         <li><strong>Problem Reports:</strong> If you choose Settings, then Report a problem (or shake your phone) and tap Send, we receive what you typed and the category you picked; an optional screenshot of the screen you were on, which you can remove before sending; your app version and build, Android version, phone maker and model, and language; the connected camera's model, firmware version, and technical details (USB ID, supported settings, and recent camera commands and replies, but not the camera's serial number); a recent app log with personal data removed on your phone before sending (emails, tokens, account IDs, IP addresses, serial numbers, and file paths); and whether crash reporting is on, with your pseudonymous crash ID so we can match the report to a crash. Nothing is sent until you tap Send. If you are offline, the report is saved on your phone and sent when you are back online. If you are not signed in, you can email the report to us instead, and it is treated as a support message. Reports are stored in our database and a private storage bucket, linked to your account, and only we can read them.</li>
     </ul>
@@ -53,8 +53,8 @@
     <h3>Information Collected Automatically</h3>
     <ul>
         <li><strong>AI Usage Records:</strong> For each AI chat or AI preview request we record the time, the feature, the provider and model, and token or image counts so we can enforce daily limits. These records never contain your message text or photos.</li>
-        <li><strong>Analytics Data:</strong> Firebase Analytics is off by default. If you turn it on in the app, it collects usage events such as screens viewed and features used, device and operating system type, and the camera model you select, linked to your FujiMuse account ID.</li>
-        <li><strong>Crash Reports:</strong> Firebase Crashlytics is off by default. If you turn it on, it collects crash logs and device state. Crash data does not include your messages, photos, or recipe details.</li>
+        <li><strong>Analytics Data:</strong> Firebase Analytics is off by default. If you turn it on in the app, it collects usage events such as screens viewed and features used, device and operating system type, and the camera model you select, linked to a random app-instance identifier generated by Firebase, not to your FujiMuse account. The same in-app switch turns analytics and crash reporting on and off.</li>
+        <li><strong>Crash Reports:</strong> Firebase Crashlytics is off by default. If you turn it on, it collects crash logs and device state. Crash data does not include your messages, photos, or recipe details. Crash reports are grouped by a pseudonymous crash ID made from a salted one-way hash, never your account ID or email address.</li>
         <li><strong>Server Logs:</strong> Our hosting providers record IP address, request time, and similar technical data when the app or website contacts our servers, for security and troubleshooting.</li>
         <li><strong>Website Analytics:</strong> The FujiMuse website uses Vercel Web Analytics and Speed Insights to collect aggregated page-view, referral, device, general location, and performance measurements, plus clicks on sign-up buttons. Vercel Web Analytics does not use third-party cookies, does not associate events with an individual or IP address, and discards its temporary visitor-session identifier after 24 hours. We do not send waitlist email addresses to Vercel Analytics.</li>
         <li><strong>Waitlist Abuse Protection:</strong> To limit repeated sign-up attempts, the website stores a keyed one-way digest of your IP address for a short rate-limit window. We never store the raw IP address with the waitlist.</li>
@@ -106,12 +106,12 @@
     </ul>
 
     <h2>Public Information</h2>
-    <p>FujiMuse has social features. Your username, display name, profile picture, bio, website, camera model, posts (including photos, captions, and any location you typed), comments, likes, follows, and shared recipes can be seen by other users. Photos you post and your profile picture are stored at links that anyone with the link can open. Your email address is never shown to other users. Photos are re-encoded before upload, which removes GPS and other photo metadata.</p>
+    <p>FujiMuse has social features. Your username, display name, profile picture, bio, website, camera model, posts (including photos, captions, and any location you typed), comments, likes, follows, and shared recipes can be seen by other users. Your profile picture is stored at a link that anyone with the link can open; post photos can be viewed only while the post is visible. Your email address is never shown to other users. Photos are re-encoded before upload, which removes GPS and other photo metadata. Some recipes in the app are credited to outside creators, such as Fuji X Weekly. For those we show the creator's public name and blog name and a link to the original post, as published on their blog.</p>
 
     <h2>Data Sharing</h2>
     <p>We do not sell your personal information. We share information only:</p>
     <ul>
-        <li><strong>With Service Providers:</strong> Account, database, storage, and server hosting, including problem reports and their screenshots (Supabase); AI chat processing (Google Gemini, and Anthropic Claude if used); AI image preview processing (Replicate); in-app analytics and crash reporting only after you opt in (Google Firebase Analytics and Crashlytics); payment processing (Google Play Billing, and the Apple App Store for the iOS app); website hosting, aggregated website analytics, and performance monitoring (Vercel); waitlist database hosting (Neon); and waitlist confirmation emails (Resend). These providers process data on our behalf.</li>
+        <li><strong>With Service Providers:</strong> Account, database, storage, and server hosting, including problem reports and their screenshots (Supabase); sign-in with Apple (Sign in with Apple) and Google (Google sign-in, and Google Identity Services for joining the website waitlist); AI chat processing (Google Gemini, and Anthropic Claude if used); AI image preview processing (Replicate); in-app analytics and crash reporting only after you opt in (Google Firebase Analytics and Crashlytics); payment processing (Google Play Billing, and the Apple App Store for the iOS app); website hosting, aggregated website analytics, and performance monitoring (Vercel); waitlist database hosting (Neon); and waitlist confirmation emails (Resend). These providers process data on our behalf.</li>
         <li><strong>With Other Users:</strong> The public information described above</li>
         <li><strong>For Legal Reasons:</strong> When required by law or to protect rights and safety</li>
         <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets, subject to this policy</li>
@@ -198,7 +198,7 @@
     </ul>
     <p>Our legal bases for processing are:</p>
     <ul>
-        <li><strong>Contract</strong>: To provide your account, sync, purchases, and the features you use</li>
+        <li><strong>Contract</strong>: To provide your account (including sign-in with Apple or Google if you choose it), sync, purchases, and the features you use</li>
         <li><strong>Consent</strong>: For optional analytics and crash reporting, and for waitlist emails</li>
         <li><strong>Legitimate Interest</strong>: For security, abuse prevention, moderation, and aggregated website measurement, and for fixing problems with the service when you send us a problem report at your request</li>
     </ul>
