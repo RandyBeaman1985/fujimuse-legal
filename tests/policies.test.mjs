@@ -95,6 +95,7 @@ test("terms: free tier does not claim server AI previews", () => {
 test("terms: user-generated content rules required by app stores", () => {
   assert.match(terms, /no tolerance for objectionable content/i);
   assert.match(terms, /block/i);
+  assert.match(terms, /24 hours/);
 });
 
 test("terms: subscriptions renew automatically and cancel in the store", () => {
