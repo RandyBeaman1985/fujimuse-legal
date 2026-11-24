@@ -20,9 +20,12 @@ test("privacy: AI chat is not stored, not even on the device", () => {
   assert.match(privacy, /usage records[^.]*35 days/i);
 });
 
-test("privacy: only email and password sign-in is described", () => {
-  assert.doesNotMatch(privacy, /If you sign in with a third-party service/i);
+test("privacy: iOS sign-in providers and local image processing are disclosed", () => {
   assert.match(privacy, /email address and password/i);
+  assert.match(privacy, /sign in with Apple or Google/);
+  assert.match(privacy, /private relay email/);
+  assert.match(privacy, /Apple Vision on iOS/);
+  assert.doesNotMatch(privacy, /we do not use third-party sign-in/);
 });
 
 test("privacy: no promise of a full data export that does not exist", () => {
