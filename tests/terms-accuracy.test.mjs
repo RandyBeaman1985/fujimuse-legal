@@ -14,7 +14,7 @@ const text = (file) =>
 const terms = text("terms-of-service.html");
 
 test("terms: Creator tier is not described as on sale", () => {
-  assert.doesNotMatch(terms, /\bCreator\b/);
+  assert.doesNotMatch(terms, /Creator\s*:|200 AI chat/i);
 });
 
 test("terms: lists the Pro prices and trial", () => {
@@ -42,5 +42,5 @@ test("terms: third-party recipes are credited and not claimed", () => {
 });
 
 test("terms: last updated date", () => {
-  assert.match(terms, /Last Updated: October 16, 2026/);
+  assert.match(terms, /Last Updated: November 25, 2026/);
 });

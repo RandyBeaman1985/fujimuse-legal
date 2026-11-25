@@ -20,6 +20,15 @@ test("privacy: AI chat is not stored, not even on the device", () => {
   assert.match(privacy, /usage records[^.]*35 days/i);
 });
 
+test("privacy: iOS sign-in providers and local image processing are disclosed", () => {
+  assert.match(privacy, /email address and password/i);
+  assert.match(privacy, /Sign in with Apple/);
+  assert.match(privacy, /Google/);
+  assert.match(privacy, /private relay email/);
+  assert.match(privacy, /Apple Vision on iOS/);
+  assert.doesNotMatch(privacy, /we do not use third-party sign-in/);
+});
+
 test("privacy: discloses email, Apple and Google sign-in", () => {
   assert.match(privacy, /email address and password/i);
   assert.match(privacy, /Sign in with Apple/);
@@ -49,7 +58,7 @@ test("privacy: discloses third-party recipe credits", () => {
 });
 
 test("privacy: last updated date", () => {
-  assert.match(privacy, /Last Updated: October 16, 2026/);
+  assert.match(privacy, /Last Updated: November 25, 2026/);
 });
 
 test("privacy: no promise of a full data export that does not exist", () => {
@@ -115,12 +124,13 @@ test("short links used by the apps resolve", () => {
   }
 });
 
-test("contact and operator placeholders are the owner's until a company exists", () => {
+test("contact remains reachable and operator matches the enrolled company", () => {
   for (const doc of [privacy, terms]) {
     assert.doesNotMatch(doc, /gmail\.com/);
     assert.doesNotMatch(doc, /FujiMuse Development/);
     assert.match(doc, /davey@cleverfoxailabs\.com/);
-    assert.match(doc, /David Randa/);
+    assert.match(doc, /Clever Fox AI labs LLC/);
+    assert.doesNotMatch(doc, /individual developer|no separate company/);
     assert.doesNotMatch(doc, /Davey Randa/);
   }
 });
