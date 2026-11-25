@@ -22,10 +22,43 @@ test("privacy: AI chat is not stored, not even on the device", () => {
 
 test("privacy: iOS sign-in providers and local image processing are disclosed", () => {
   assert.match(privacy, /email address and password/i);
-  assert.match(privacy, /sign in with Apple or Google/);
+  assert.match(privacy, /Sign in with Apple/);
+  assert.match(privacy, /Google/);
   assert.match(privacy, /private relay email/);
   assert.match(privacy, /Apple Vision on iOS/);
   assert.doesNotMatch(privacy, /we do not use third-party sign-in/);
+});
+
+test("privacy: discloses email, Apple and Google sign-in", () => {
+  assert.match(privacy, /email address and password/i);
+  assert.match(privacy, /Sign in with Apple/);
+  assert.match(privacy, /Google/);
+  assert.match(privacy, /private relay/i);
+  assert.doesNotMatch(privacy, /do not use third-party sign-in/i);
+  assert.match(privacy, /Continue with Google/i);
+});
+
+test("privacy: analytics are not tied to the FujiMuse account", () => {
+  assert.doesNotMatch(privacy, /linked to your FujiMuse account ID/i);
+  assert.match(privacy, /app-instance identifier/i);
+  assert.match(privacy, /salted/i);
+});
+
+test("privacy: terms acceptance records the time only", () => {
+  assert.doesNotMatch(privacy, /and which version/i);
+});
+
+test("privacy: post photos are not described as open links", () => {
+  assert.doesNotMatch(privacy, /Photos you post and your profile picture are stored at links/i);
+  assert.match(privacy, /post photos can be viewed only while the post is visible/i);
+});
+
+test("privacy: discloses third-party recipe credits", () => {
+  assert.match(privacy, /Fuji X Weekly/);
+});
+
+test("privacy: last updated date", () => {
+  assert.match(privacy, /Last Updated: November 25, 2026/);
 });
 
 test("privacy: no promise of a full data export that does not exist", () => {
@@ -71,7 +104,7 @@ test("terms: free tier does not claim server AI previews", () => {
 test("terms: user-generated content rules required by app stores", () => {
   assert.match(terms, /no tolerance for objectionable content/i);
   assert.match(terms, /block/i);
-  assert.match(terms, /24 hours/);
+  assert.match(terms, /hidden automatically while we review them/i);
 });
 
 test("terms: subscriptions renew automatically and cancel in the store", () => {
