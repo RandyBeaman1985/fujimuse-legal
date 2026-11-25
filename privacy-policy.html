@@ -27,7 +27,7 @@
 <body>
     <!-- Operator matches the organization enrolled in the Apple Developer Program. -->
     <h1>FujiMuse Privacy Policy</h1>
-    <p class="updated"><strong>Last Updated:</strong> September 27, 2026</p>
+    <p class="updated"><strong>Last Updated:</strong> November 25, 2026</p>
 
     <h2>Introduction</h2>
     <p>FujiMuse ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the FujiMuse mobile apps, visit the FujiMuse website at <a href="https://fujimuse.app">fujimuse.app</a>, or join the beta waitlist.</p>
@@ -47,6 +47,8 @@
         <li><strong>Photos for AI Preview:</strong> A photo you choose when you request an AI-enhanced recipe preview</li>
         <li><strong>Reports:</strong> Content or users you report, and the reason you give</li>
         <li><strong>Terms Acceptance:</strong> A record of when you accepted the Terms of Service and which version</li>
+        <li><strong>Deletion Recovery Records:</strong> When deletion is requested, we keep an account identifier, deletion progress, timestamps, and a one-way hash of a device recovery receipt. Completed deletion records and receipt hashes are removed after 90 days; incomplete requests stay available for retry until deletion finishes. The secret receipt stays in the requesting iPhone's device-only Keychain until local cleanup finishes.</li>
+        <li><strong>Apple Authorization:</strong> For native Sign in with Apple, an encrypted provider token is retained on our server so access can be revoked during account deletion. It is removed after Apple acknowledges revocation; a failed revocation remains available for retry.</li>
         <li><strong>Purchase Records:</strong> Google Play purchase tokens (and, for the iOS app, Apple App Store transaction identifiers) used to verify paid feature access. We do not receive your payment card details.</li>
         <li><strong>Beta Waitlist:</strong> Email address, whether and when you confirmed it through the link we email you, consent date and version, language/locale, referring page, landing-page variant, and campaign attribution parameters when you join the beta waitlist on our website. The waitlist does not require a FujiMuse account.</li>
         <li><strong>Support Messages:</strong> Anything you send us by email</li>
@@ -134,6 +136,7 @@
 
     <h2>Deleting Your Account</h2>
     <p>You can delete your account in the app under Settings, then Delete Account. If you cannot sign in, follow the steps at <a href="https://fujimuse.app/account-deletion">fujimuse.app/account-deletion</a>. Deletion removes your sign-in account, profile, posts and uploaded photos, comments, likes, follows, saved recipes, cloud recipe backups, collections, reports you filed, your terms acceptance record, and the subscription status we store. The page lists the limited data that is kept and for how long. Deleting your account does not cancel a store subscription; cancel it in Google Play or the App Store.</p>
+    <p>A deletion request can remain pending while a provider or network is unavailable. The iOS app keeps a device recovery receipt and confirms server deletion before removing the account's saved data from that iPhone. If confirmation is interrupted, reopen the app and retry. A failed or missing reply does not by itself mean the server has left your account unchanged. Contact support if recovery cannot finish.</p>
 
     <h2>Your Rights</h2>
     <p>Depending on where you live, you may have the right to:</p>
