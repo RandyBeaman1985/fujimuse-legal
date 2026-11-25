@@ -91,12 +91,13 @@ test("short links used by the apps resolve", () => {
   }
 });
 
-test("contact and operator placeholders are the owner's until a company exists", () => {
+test("contact remains reachable and operator matches the enrolled company", () => {
   for (const doc of [privacy, terms]) {
     assert.doesNotMatch(doc, /gmail\.com/);
     assert.doesNotMatch(doc, /FujiMuse Development/);
     assert.match(doc, /davey@cleverfoxailabs\.com/);
-    assert.match(doc, /David Randa/);
+    assert.match(doc, /Clever Fox AI labs LLC/);
+    assert.doesNotMatch(doc, /individual developer|no separate company/);
     assert.doesNotMatch(doc, /Davey Randa/);
   }
 });
